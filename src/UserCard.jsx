@@ -1,8 +1,8 @@
 import React from "react";
 
 function UserCard(props) {
-    const { name, email, street, city, ...rest } = props;
-    const [clicked, setClicked] = useState(false);
+    const { name, email, street, city } = props;
+    const [clicked, setClicked] = React.useState(false);
 
     return (
         <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
@@ -15,11 +15,11 @@ function UserCard(props) {
             </p>
 
             {/* Menampilkan data tambahan dari rest */}
-            {Object.entries(rest).map(([key, value]) => (
+            {/* {Object.entries(rest).map(([key, value]) => (
                 <p key={key} className="text-gray-600">
                     <span className="font-medium capitalize">{key}:</span> {value}
                 </p>
-            ))}
+            ))} */}
             <button onClick={() => setClicked(true)} className={`${clicked ? "bg-special-green" : "bg-gray-01"} text-white p-2 rounded-md`}>
                 {clicked ? "Tombol sudah diklik" : "Silahkan klik"}
             </button>
